@@ -14,8 +14,8 @@ export class UpholdService {
     return this.getResponse(url);
   }
 
-  getResponse(url: string = this._api): Observable<any> {
-    const response = this._http.get(url).pipe(
+  getResponse(url: string): Observable<any> {
+    const response = this._http.post(url, {}).pipe(
       map((res: any) => res)
     );
     return response;

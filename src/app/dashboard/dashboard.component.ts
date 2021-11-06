@@ -1,3 +1,4 @@
+import { UpholdService } from './../services/uphold.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,10 +7,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
-
-  constructor() { }
+  constructor(private upholdService: UpholdService) { }
 
   ngOnInit(): void {
+    this.upholdService.getToken(1);
   }
 
 }
