@@ -8,7 +8,9 @@
     "lint": "ng lint",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "test:cov": "ng test --coverage"
+    "test:cov": "ng test --coverage",
+    "prepare": "husky install",
+    "create-hook": "husky add .husky/pre-commit \"ng test && ng lint\""
   },
   "private": true,
   "dependencies": {
@@ -43,6 +45,7 @@
     "@typescript-eslint/eslint-plugin": "4.28.2",
     "@typescript-eslint/parser": "4.28.2",
     "eslint": "^7.26.0",
+    "husky": "^7.0.4",
     "jest": "^27.3.1",
     "tailwindcss": "^2.2.19",
     "ts-jest": "^27.0.7",

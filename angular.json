@@ -83,7 +83,7 @@
           }
         },
         "test": {
-          "builder": "@ngx-env/builder:karma",
+          "builder": "@angular-builders/jest:run",
           "options": {}
         },
         "lint": {
