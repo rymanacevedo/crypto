@@ -1,3 +1,4 @@
+import { CoinbaseService } from './../services/coinbase.service';
 import { UpholdService } from './../services/uphold.service';
 import { Component, OnInit } from '@angular/core';
 
@@ -7,10 +8,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
-  constructor(private upholdService: UpholdService) { }
+  private currency = 'USD';
+  private blockchain = 'BTC';
+  constructor(private upholdService: UpholdService, private coinbaseService: CoinbaseService) { }
 
   ngOnInit(): void {
-    this.upholdService.getToken(1);
+    this.coinbaseService.getPrices().subscribe(r => {
+
+    });
   }
 
 }
