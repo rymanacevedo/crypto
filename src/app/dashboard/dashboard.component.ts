@@ -10,7 +10,10 @@ import { Component, OnInit } from '@angular/core';
 export class DashboardComponent implements OnInit {
   private currency = 'USD';
   private blockchain = 'BTC';
-  constructor(private upholdService: UpholdService, private coinbaseService: CoinbaseService) { }
+  constructor(
+    private upholdService: UpholdService,
+    private coinbaseService: CoinbaseService
+    ) { }
 
   ngOnInit(): void {
     this.coinbaseService.getPrices().subscribe(r => {
