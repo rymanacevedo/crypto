@@ -71,7 +71,8 @@
               "browserTarget": "crypto:build:production"
             },
             "development": {
-              "browserTarget": "crypto:build:development"
+              "browserTarget": "crypto:build:development",
+              "proxyConfig": "src/proxy.conf.json"
             }
           },
           "defaultConfiguration": "development"
