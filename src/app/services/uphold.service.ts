@@ -7,7 +7,7 @@ import { map } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class UpholdService {
-  private _api = process.env.NG_APP_UPHOLD_WALLET;
+  private _api = process.env.NG_APP_UPHOLD_URL;
   constructor(private _http: HttpClient) {}
   getToken(id: number): Observable<any> {
     const url = `${this._api}/${id}`;

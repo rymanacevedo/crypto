@@ -1,3 +1,4 @@
+import { BaseExchangeService } from './base-exchange.service';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, map } from 'rxjs';
@@ -5,14 +6,9 @@ import { Observable, map } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class KucoinService {
+export class KucoinService extends BaseExchangeService {
   private _api = process.env.NG_APP_KUCOIN_URL;
-  constructor(private _http: HttpClient) { }
-
-  getPrices(pair= 'BTC'): Observable<any> {
-    const response =  this._http.get(`${this._api}/${pair}`).pipe(
-      map((res: any) => res)
-    );
-    return response;
+  getPrices(): Observable<any> {
+    return this.get(this._api);
   }
 }
