@@ -1,4 +1,8 @@
-<span>Starter</span>
-<table>
-
+<table class="table-auto">
+  <caption>Exchange Rates</caption>
+  <tbody>
+    <tr *ngFor="let d of data">
+      {{ d | json }}
+    </tr>
+  </tbody>
 </table>
