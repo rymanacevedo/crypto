@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { catchError, map, Observable } from 'rxjs';
+import { IAsset } from '../models/IAsset';
 
 @Injectable({
   providedIn: 'root'
@@ -9,7 +10,7 @@ export class BaseExchangeService {
 
   constructor(private _http: HttpClient) { }
 
-  get(url: string, p: string = 'BTC'): Observable<any> {
+  get(url: string, p: string = 'BTC'): Observable<IAsset> {
     const response = this._http.get(`${url}/${p}`).pipe(
       map((res: any) => res),
       catchError(this.handleErrors)

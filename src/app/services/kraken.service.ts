@@ -6,8 +6,8 @@ import { IAsset } from '../models/IAsset';
 @Injectable({
   providedIn: 'root'
 })
-export class KucoinService extends BaseExchangeService {
-  private _api = process.env.NG_APP_KUCOIN_URL;
+export class KrakenService extends BaseExchangeService {
+  private _api = process.env.NG_APP_KRAKEN_URL;
   getPrices(coin='BTC'): Observable<IAsset> {
     return this.get(this._api, coin);
   }
