@@ -10,8 +10,8 @@ export class BaseExchangeService {
 
   constructor(private _http: HttpClient) { }
 
-  get(url: string, p: string = 'BTC'): Observable<IAsset> {
-    const response = this._http.get(`${url}/${p}`).pipe(
+  get(url: string, p: string = 'BTC', currency = 'USD'): Observable<IAsset> {
+    const response = this._http.get(`${url}?coin=${p}&currency=${currency}`).pipe(
       map((res: any) => res),
       catchError(this.handleErrors)
     );

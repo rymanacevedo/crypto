@@ -8,7 +8,10 @@ import { IAsset } from '../models/IAsset';
 })
 export class CryptoService extends BaseExchangeService {
   private _api = process.env.NG_APP_CRYPTO_URL;
-  getPrices(coin='BTC'): Observable<IAsset> {
-    return this.get(this._api, coin);
+  getPrices(coin='BTC', currency='USDT'): Observable<IAsset> {
+    if(currency === 'USD') {
+      currency =  'USDT';
+    }
+    return this.get(this._api, coin, currency);
   }
 }

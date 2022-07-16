@@ -30,13 +30,13 @@ export class DashboardComponent implements OnInit {
   ngOnInit(): void {
     // forkJoin the service calls
     forkJoin([
-      this.upholdService.getPrices(this.blockchain),
-      this.coinbaseService.getPrices(this.blockchain),
-      this.kucoinService.getPrices(this.blockchain),
-      this.binanceService.getPrices(this.blockchain),
-      this.coinmetroService.getPrices(this.blockchain),
-      this.cryptoService.getPrices(this.blockchain),
-      this.krakenService.getPrices(this.blockchain)
+      this.upholdService.getPrices(this.blockchain, this.currency),
+      this.coinbaseService.getPrices(this.blockchain, this.currency),
+      this.kucoinService.getPrices(this.blockchain, this.currency),
+      this.binanceService.getPrices(this.blockchain, this.currency),
+      this.coinmetroService.getPrices(this.blockchain, this.currency),
+      this.cryptoService.getPrices(this.blockchain, this.currency),
+      this.krakenService.getPrices(this.blockchain, this.currency)
     ]).subscribe(results => {
       this.data = results;
      }
@@ -45,13 +45,13 @@ export class DashboardComponent implements OnInit {
 
   searchCrypto() {
     forkJoin([
-      this.upholdService.getPrices(this.blockchain),
-      this.coinbaseService.getPrices(this.blockchain),
-      this.kucoinService.getPrices(this.blockchain),
-      this.binanceService.getPrices(this.blockchain),
-      this.coinmetroService.getPrices(this.blockchain),
-      this.cryptoService.getPrices(this.blockchain),
-      this.krakenService.getPrices(this.blockchain)
+      this.upholdService.getPrices(this.blockchain, this.currency),
+      this.coinbaseService.getPrices(this.blockchain, this.currency),
+      this.kucoinService.getPrices(this.blockchain, this.currency),
+      this.binanceService.getPrices(this.blockchain, this.currency),
+      this.coinmetroService.getPrices(this.blockchain, this.currency),
+      this.cryptoService.getPrices(this.blockchain, this.currency),
+      this.krakenService.getPrices(this.blockchain, this.currency)
     ]).subscribe(results => {
       this.data = results;
      }
