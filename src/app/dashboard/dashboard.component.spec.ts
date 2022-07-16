@@ -1,3 +1,4 @@
+import { FormsModule } from '@angular/forms';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { DashboardComponent } from './dashboard.component';
@@ -9,7 +10,7 @@ describe('DashboardComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [ DashboardComponent ],
-      imports: [ HttpClientTestingModule ]
+      imports: [ HttpClientTestingModule, FormsModule ]
     })
     .compileComponents();
   });
