@@ -1,5 +1,61 @@
+{{this.blockchain}}
+{{this.currency}}
+<label for="search-crypto">Select a crypto</label>
+
+<select [(ngModel)]="blockchain" name="crypto" id="search-crypto">
+  <option value="BTC" selected>BTC</option>
+  <option value="ETH">ETH</option>
+  <option value="DOT">DOT</option>
+  <option value="TRX">TRX</option>
+  <option value="XRP">XRP</option>
+  <option value="BCH">BCH</option>
+  <option value="LTC">LTC</option>
+  <option value="EOS">EOS</option>
+  <option value="XLM">XLM</option>
+  <option value="ADA">ADA</option>
+  <option value="XMR">XMR</option>
+  <option value="IOTA">IOTA</option>
+  <option value="NEO">NEO</option>
+  <option value="ETC">ETC</option>
+  <option value="DASH">DASH</option>
+  <option value="XEM">XEM</option>
+  <option value="XVG">XVG</option>
+  <option value="ZEC">ZEC</option>
+  <option value="BTG">BTG</option>
+  <option value="ONT">ONT</option>
+  <option value="ZRX">ZRX</option>
+  <option value="QTUM">QTUM</option>
+  <option value="ICX">ICX</option>
+  <option value="VEN">VEN</option>
+  <option value="OMG">OMG</option>
+  <option value="ELF">ELF</option>
+  <option value="MCO">MCO</option>
+  <option value="KNC">KNC</option>
+  <option value="GNT">GNT</option>
+  <option value="BAT">BAT</option>
+  <option value="AE">AE</option>
+  <option value="BTM">BTM</option>
+  <option value="ZIL">ZIL</option>
+  <option value="XZC">XZC</option>
+  <option value="WAVES">WAVES</option>
+  <option value="KCS">KCS</option>
+  <option value="SNT">SNT</option>
+</select>
+<select [(ngModel)]="currency" name="currency" id="search-currency">
+  <option value="USD" selected>USD</option>
+  <option value="EUR">EUR</option>
+  <option value="GBP">GBP</option>
+</select>
+
+<!-- button on click -->
+<button (click)="searchCrypto()">Search</button>
 <table class="table-auto">
   <caption>Exchange Rates</caption>
+  <thead>
+    <tr>
+      <th class="px-4 py-2">Currency</th>
+      <th class="px-4 py-2">Rate</th>
+    </tr>
   <tbody>
     <tr *ngFor="let d of data">
       {{ d | json }}
