@@ -26,5 +26,7 @@ module.exports = {
   testMatch: [
     '<rootDir>/src/app/*.spec.ts',
     '<rootDir>/src/app/**/*.spec.ts'
-  ]
+  ],
+  transform: { '^.+.(ts|mjs|js|html)$': 'jest-preset-angular' },
+  transformIgnorePatterns: ['node_modules/(?!.*.mjs$)'],
 };
