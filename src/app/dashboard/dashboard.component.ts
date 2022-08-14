@@ -7,6 +7,7 @@ import { CoinmetroService } from '../services/coinmetro.service';
 import { BinanceService } from '../services/binance.service';
 import { CryptoService } from '../services/crypto.service';
 import { KrakenService } from '../services/kraken.service';
+import { AlpacaService } from '../services/alpaca.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -24,7 +25,8 @@ export class DashboardComponent implements OnInit {
     private cryptoService: CryptoService,
     private binanceService: BinanceService,
     private coinmetroService: CoinmetroService,
-    private krakenService: KrakenService
+    private krakenService: KrakenService,
+    private alpacaService: AlpacaService
   ) { }
 
   ngOnInit(): void {
@@ -36,7 +38,8 @@ export class DashboardComponent implements OnInit {
       this.binanceService.getPrices(this.blockchain, this.currency),
       this.coinmetroService.getPrices(this.blockchain, this.currency),
       this.cryptoService.getPrices(this.blockchain, this.currency),
-      this.krakenService.getPrices(this.blockchain, this.currency)
+      this.krakenService.getPrices(this.blockchain, this.currency),
+      this.alpacaService.getPrices(this.blockchain, this.currency)
     ]).subscribe(results => {
       this.data = results;
      }
@@ -51,7 +54,8 @@ export class DashboardComponent implements OnInit {
       this.binanceService.getPrices(this.blockchain, this.currency),
       this.coinmetroService.getPrices(this.blockchain, this.currency),
       this.cryptoService.getPrices(this.blockchain, this.currency),
-      this.krakenService.getPrices(this.blockchain, this.currency)
+      this.krakenService.getPrices(this.blockchain, this.currency),
+      this.alpacaService.getPrices(this.blockchain, this.currency)
     ]).subscribe(results => {
       this.data = results;
      }
